@@ -1,0 +1,28 @@
+name: 2. Terraform Apply (UI Triggered)
+on: workflow_dispatch
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  apply:
+    name: Terraform Apply
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: feature/poc-infra-update
+      - name: Configure AWS Credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::202533543944:role/InfraOrchestrator-GitHub-Role
+          aws-region: ap-south-1
+      - uses: hashicorp/setup-terraform@v2
+      - name: Terraform Init
+        working-directory: ./infrastructure
+        run: |
+          for i in 1 2 3; do
+            terraform init && break || sleep 10
+          done
+      - name: Terraform Apply
+        working-directory: ./infrastructure
+        run: terraform apply -auto-approve
