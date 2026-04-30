@@ -19,10 +19,7 @@ provider "aws" {
 }
 
 resource "aws_vpc" "vpc_10_0_0_0_21" {
-  cidr_block           = var.vpc_cidr
-  enable_dns_hostnames = true
-  enable_dns_support   = true
-
+  cidr_block = "10.0.0.0/21"
   tags = {
     Name      = "vbl-network-endpoint-main"
     ManagedBy = "terraform"
@@ -32,7 +29,6 @@ resource "aws_vpc" "vpc_10_0_0_0_21" {
 
 resource "aws_internet_gateway" "igw_main" {
   vpc_id = aws_vpc.vpc_10_0_0_0_21.id
-
   tags = {
     Name      = "vbl-network-endpoint-main-igw"
     ManagedBy = "terraform"
