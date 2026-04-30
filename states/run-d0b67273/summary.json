@@ -6,11 +6,11 @@
   "account": "183295435445",
   "resources_count": 5,
   "resource_types": [
-    "aws_route_table_association",
     "aws_subnet",
+    "aws_internet_gateway",
+    "aws_route_table_association",
     "aws_vpc",
-    "aws_route_table",
-    "aws_internet_gateway"
+    "aws_route_table"
   ],
   "repo_private": false
 }
