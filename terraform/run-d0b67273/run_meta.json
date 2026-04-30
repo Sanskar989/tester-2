@@ -1,0 +1,11 @@
+{
+  "run_id": "d0b67273",
+  "vpc_name": "vbl-network-endpoint-main",
+  "vpc_cidr": "10.0.0.0/21",
+  "region": "us-west-2",
+  "subnets": 1,
+  "nat": "No",
+  "account": "183295435445",
+  "state_pushed": true,
+  "repo_private": false
+}
