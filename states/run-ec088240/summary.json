@@ -1,0 +1,16 @@
+{
+  "run_id": "ec088240",
+  "vpc_name": "vbl-network-endpoint-main",
+  "region": "us-west-2",
+  "subnets": 1,
+  "account": "183295435445",
+  "resources_count": 5,
+  "resource_types": [
+    "aws_subnet",
+    "aws_route_table",
+    "aws_internet_gateway",
+    "aws_vpc",
+    "aws_route_table_association"
+  ],
+  "repo_private": false
+}
